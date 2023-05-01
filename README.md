@@ -8,6 +8,9 @@
 #### Build Project
 `bun run build`
 
+#### Dev Server
+`wrangler dev _worker.js`
+
 #### Types
 ```typescript
 export type Page = {
@@ -24,16 +27,16 @@ export type Router = Record<string, Page>;
 `svelte-cloud-buns` is a package for building lightweight UIs with Svelte hosted on Cloudflare.
 
 ### Pages Entrypoint
-By default, the `scb` CLI will look for a `Router` names `pages` exported from `./src/index.ts` unless otherwise specified.
+By default, the `scb` CLI will look for `Pages` exported from `./src/index.ts` unless otherwise specified.
 
 ##### Example Entrypoint
 ```typescript
 import Home from "./lib/pages/home.svelte";
 
-import { type Router } from "svelty-cloud-buns";
+import { type Pages } from "svelty-cloud-buns";
 
 // Add routes that point to svelte files here
-export const pages : Router = {
+export const pages : Pages = {
     "/" : {
         title: "Home",
         component: Home,
@@ -44,8 +47,8 @@ export const pages : Router = {
 }
 ```
 
-### CLI
-Running `scb` will read the pages your app exports and generate a router for the associated Cloudflare Worker to use.
+### CLI (Generate Worker )
+Running `scb` will read the pages your app exports and generate a router for the associated Cloudflare Worker to use. Once you run `scb` on your project, you should be able to `import { router } from "svelte-cloud-buns"` in this projects `_worker.js` file.
 
 ##### Config
 ```js
@@ -61,8 +64,13 @@ Running `scb` will read the pages your app exports and generate a router for the
 ```
 
 ### Worker
+Minimal Cloudflare worker definition needed to support Svelty Cloud Buns.
+```typescript
+import { router } from "svelty-cloud-buns";
 
-
-
-
-
+export default {
+    async fetch(request, env) {
+        return router(request);
+    },
+}
+```
