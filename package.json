@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "devDependencies": {
     "svelte": "^3.58.0",
-    "svelty-cloud-buns": "file:./pkg/svelty-cloud-buns"
+    "svelty-cloud-buns": "file:./pkg/svelty-cloud-buns",
+    "wrangler": "^2.17.0"
   },
   "description": "Example of using svelty-buns",
   "license": "MIT",
