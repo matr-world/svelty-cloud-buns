@@ -1,7 +1,7 @@
 # ☁️ svelty-cloud-buns
 ### Requirements (for best experience)
 - Install Bun https://bun.sh/ (`curl -fsSL https://bun.sh/install | bash`)
-- Install Wrangler CLI https://developers.cloudflare.com/workers/wrangler/install-and-update/ (bun add -g wrangler)
+- Install Wrangler CLI https://developers.cloudflare.com/workers/wrangler/install-and-update/ (`bun add -g wrangler`)
 
 #### Install Project
 `bun i`
