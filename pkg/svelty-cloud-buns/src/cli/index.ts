@@ -8,10 +8,14 @@ import { svelteLoader } from "./plugins/svelte-loader";
 const pkgPath = path.join(process.cwd() + "/package.json");
 
 const {
-  main = "./src/index.ts"
+  scb : config = {}
 } = JSON.parse(fs.readFileSync(pkgPath).toString() || "{}");
 
-const src = path.join(process.cwd(), main);
+const {
+  entry = "src/index.ts",
+} = config;
+
+const src = path.join(process.cwd(), entry);
 const dist = path.join(__dirname, "../../dist");
 
 try {

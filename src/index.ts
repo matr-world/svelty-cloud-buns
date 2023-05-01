@@ -1,11 +1,9 @@
-console.log("Hello, those are some mighty svelty buns you got there");
-
 import Home from "./lib/pages/home.svelte";
 
-import { type Router } from "svelty-cloud-buns";
+import { type Pages } from "svelty-cloud-buns";
 
 // Add routes that point to svelte files here
-export const pages : Router = {
+export const pages : Pages = {
     "/" : {
         title: "Home",
         component: Home,

@@ -4,7 +4,7 @@ export type Page = {
   props: Record<string, any>;
 }
 
-export type Router = Record<string, Page>;
+export type Pages = Record<string, Page>;
 
 export const router = (request: Request) => {
   let pages = {};
