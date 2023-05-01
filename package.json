@@ -1,16 +1,16 @@
 {
-  "name": "svelty-buns",
-  "module": "src/index.ts",
-  "type": "module",
-  "scripts": {
-    "build": "bun bun.ts"
-  },
+  "name": "svelty-cloud-buns-poc",
+  "version": "1.0.0",
+  "author": "qudo-code",
+  "main": "src/index.js",
   "devDependencies": {
-    "bun": "canary",
-    "bun-types": "^0.5.0",
-    "svelte": "^3.58.0"
+    "svelte": "^3.58.0",
+    "svelty-cloud-buns": "file:./pkg/svelty-cloud-buns"
   },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+  "description": "Example of using svelty-buns",
+  "license": "MIT",
+  "scripts": {
+    "build": "scb",
+    "dev": "wrangler dev _worker.js"
   }
 }
