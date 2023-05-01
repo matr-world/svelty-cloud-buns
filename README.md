@@ -1,6 +1,6 @@
 # ☁️ svelty-cloud-buns
 ### Requirements (for best experience)
-- Install Bun https://bun.sh/ (`curl -fsSL https://bun.sh/install | bash`)
+- Bun https://bun.sh/ (`curl -fsSL https://bun.sh/install | bash`)
 
 #### Install Project
 `bun i`
@@ -9,7 +9,7 @@
 `bun run build`
 
 #### Dev Server
-bun run dev `wrangler dev _worker.js`
+`bun run dev`
 
 #### Types
 ```typescript
